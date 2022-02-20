@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Clients</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body style="background-image: url('images/back.jpg');">
+
+ 	<nav class="navbar navbar-expand-lg navbar">			
+  					 <img src="images/icons8-banque-48.png"/>
+  			<div class="collapse navbar-collapse "  id="navbarSupportedContent">
+  			</br>
+
+    			<ul class="navbar-nav mr-auto">
+    				<li class="nav-item active">
+        				<a class="nav-link" style="color:rgb(192, 192, 192);font-size:20px" th:href="@{/}">Home</a>
+      				</li>
+      			<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Groupe</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item"  th:href="@{/listeGroupe}">Liste des groupes</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddGroupeForm}">Ajouter un groupe</a>
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Client</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item"  th:href="@{/clients}">Liste des clients</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddClientForm}">Ajouter un client</a>
+        					</div>
+      				</li>
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employe</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/employes}">Liste des employés</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddEmployeForm}">Ajouter un employé</a>
+        					</div>
+      				</li>
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compte</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/ajouterCompteCourant}">Ajouter Compte Courant</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ajouterCompteEpargne}">Ajouter Compte Epargne</a>
+          					
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opération</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/showVersementForm}">Versement</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showRetraitFrom}">Retrait</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showVirementForm}">Virement</a>
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultation</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          					
+          						<a class="dropdown-item" th:href="@{/ConsulterCompte}">Un Compte</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ConsulterComptesClient}">Les Comptes d'un client</a>
+        						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des opérations d'un compte</a>
+        			
+        					</div>
+      				</li>
+      				
+    			</ul>
+  			</div>
+</nav>
+
+</br> </br> </br>
+<div class="container">
+	
+		<form action="#" th:action="@{/AllAcountOperations}" method="PUT" style="color:white;font-size:20px">
+		
+  		<div class="form-group">
+    		<label for="formGroupExampleInput1">Code Compte</label>
+    		<input name="code" type="text" class="form-control">
+  		</div>
+  		
+  		
+		<button class="btn btn-success"  type="submit">Chercher</button>
+	 
+	</form>
+	
+	
+	</div>
+
+
+
+
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body >
+</html>

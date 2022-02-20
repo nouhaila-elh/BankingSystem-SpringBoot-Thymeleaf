@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Clients</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body style="background-image: url('images/back.jpg');">
+
+ 	<nav class="navbar navbar-expand-lg navbar">			
+  					 <img src="images/icons8-banque-48.png"/>
+  			<div class="collapse navbar-collapse "  id="navbarSupportedContent">
+  			</br>
+
+    			<ul class="navbar-nav mr-auto">
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Groupe</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item"  th:href="@{/listeGroupe}">Liste des groupes</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddGroupeForm}">Ajouter un groupe</a>
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Client</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item"  th:href="@{/clients}">Liste des clients</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddClientForm}">Ajouter un client</a>
+        					</div>
+      				</li>
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employe</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/employes}">Liste des employés</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showAddEmployeForm}">Ajouter un employé</a>
+        					</div>
+      				</li>
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compte</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/ajouterCompteCourant}">Ajouter Compte Courant</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ajouterCompteEpargne}">Ajouter Compte Epargne</a>
+          					
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opération</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          						<a class="dropdown-item" th:href="@{/showVersementForm}">Versement</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showRetraitFrom}">Retrait</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/showVirementForm}">Virement</a>
+        					</div>
+      				</li>
+      				
+      				<li class="nav-item dropdown active">
+        				<a class="nav-link dropdown-toggle" style="color:rgb(192, 192, 192);font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultation</a>
+        					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          					
+          						<a class="dropdown-item" th:href="@{/ConsulterCompte}">Un Compte</a>
+          						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ConsulterComptesClient}">Les Comptes d'un client</a>
+        						<div class="dropdown-divider"></div>
+          						<a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des opérations d'un compte</a>
+        			
+        					</div>
+      				</li>
+      				
+    			</ul>
+  			</div>
+</nav>
+
+</br>
+</br>
+<div class="container">
+  <div class="row">
+    <div class="col" >
+		     <div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/client.png"/>
+		  Clients</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Gestion des clients</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">Ajouter et afficher la liste des clients. chaque client peut obtenir plusieurs comptes soit epargne ou courant</p>
+		  </div>
+          </div>
+   <div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/employes.png"/>
+		  Employé</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Gestion des employés</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">Ajouter et afficher la liste des employés. chaque employé peut appartenir à plusieurs groupes</p>
+		  </div>
+          </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="col">
+     	<div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/compte-bancaire.png"/>
+		  Comptes</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Gestion des comptes</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">Ajouer des comptes à des clients existants Deux types de compte sont disponible:compte epargne et compte courant</p>
+		  </div>
+          </div>
+   <div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/virement.png"/>
+		  Opérations</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Gestion des opérations</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">Effectuer des opérations de versement , retrait soit de virement d'un compte à un autre</p>
+		  </div>
+          </div>
+    </div>
+    
+    
+    
+    
+    
+    
+     <div class="col">
+     	<div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/consultation.png"/>
+		  Consultation des comptes</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Gestion compte / client</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">consulter et afficher les comptes existants d'un client soit des comptes epargne ou des comptes courants '</p>
+		  </div>
+          </div>
+   <div class="card border-secondary mb-3" style="color:rgb(255, 255, 255);max-width: 18rem;background-image: url('images/jj.jpg');">
+		  <div class="card-header">
+		  <img src="images/page-de-texte.png"/>
+		  Consulter les opérations</div>
+		  <div class="card-body text-secondary">
+		    <h5 class="card-title" style="color:rgb(255, 255, 255);">Page des opérations</h5>
+		    <p class="card-text" style="color:rgb(255, 255, 255);">consulter la page contenant toutes les opérations effectuer pour un compte existant '</p>
+		  </div>
+          </div>
+    </div>
+  </div>
+
+</div>
+	
+	
+
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body >
+</html>
